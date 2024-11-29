@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <!-- Background VideoView (looping) -->
+    <VideoView
+        android:id="@+id/bgVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- FrameLayout for centering the content with rounded corners and color -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_frame"
+        android:elevation="8dp"
+        android:padding="8dp">
+
+        <!-- Container for interactive video and options -->
+        <LinearLayout
+            android:layout_width="308dp"
+            android:layout_height="587dp"
+            android:background="#90F0F0F0"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/storyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jerami"
+                android:text="The Dream is Born"
+                android:textColor="#2e2e2e"
+                android:textSize="24sp"
+                android:paddingBottom="8dp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/storySubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/morgen"
+                android:text="Haikal dreams of going to university abroad, but his family has different plans for him. Will he voice his ambitions?"
+                android:textColor="#4e4e4e"
+                android:textSize="18sp"
+                android:paddingBottom="12dp" />
+
+
+            <!-- Interactive VideoView with Rounded Corners -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <VideoView
+                    android:id="@+id/interactiveVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Options container -->
+            <LinearLayout
+                android:id="@+id/optionsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <!-- Options Text -->
+                <TextView
+                    android:id="@+id/optionsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What will you do?"
+                    android:textColor="#e63946"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingBottom="12dp" />
+
+                <!-- Option Buttons with Material Style -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/optionA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Share his dream with his family"
+                    android:textColor="#1F1F1F"
+                    app:backgroundTint="#87CEFA"
+                    app:cornerRadius="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/optionB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Keep his dream a secret"
+                    android:textColor="#1F1F1F"
+                    app:backgroundTint="#87CEFA"
+                    app:cornerRadius="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>
